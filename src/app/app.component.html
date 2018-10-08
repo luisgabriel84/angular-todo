@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container app">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 class="text-center">
+                {{ title }}
+            </h1>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="alert alert-success alert-dismisable">
+                <a href="#" class="close">&times;</a> Mensaje aqui
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+                class="img-responsive">
+
+        </div>
+
+        <div class="col-sm-8">
+            <h2>Create Data:</h2>
+            <form action="" class="form">
+                <div class="form-group row">
+                    <label for="name" class="col-2 col-form-label">Name:</label>
+                    <div class="col-10">
+                        <input type="text" name="name" [(ngModel)]="model.name" id="name" class="form-control" placeholder="Enter a new name" aria-describedby="helpId">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-2 col-form-label">Email:</label>
+                    <div class="col-10">
+                        <input type="text" name="email" [(ngModel)]="model.email" id="email" class="form-control" placeholder="Enter a new email" aria-describedby="helpId">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-2 col-form-label">Position:</label>
+                    <div class="col-10">
+                        <input type="text" name="position" [(ngModel)]="model.position" id="position" class="form-control" placeholder="Enter a new position" aria-describedby="helpId">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
