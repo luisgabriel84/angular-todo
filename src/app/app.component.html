@@ -10,8 +10,8 @@
         </div>
 
         <div class="col-sm-4">
-            <div class="alert alert-success alert-dismisable">
-                <a href="#" class="close">&times;</a> Mensaje aqui
+            <div class="alert alert-success alert-dismisable" *ngIf="msg">
+                <a href="#" class="close" (click)="closeAlert()">&times;</a> {{msg}}
             </div>
         </div>
     </div>
@@ -46,9 +46,79 @@
                         <input type="text" name="position" [(ngModel)]="model.position" id="position" class="form-control" placeholder="Enter a new position" aria-describedby="helpId">
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-10 offset-2">
+                        <button type="submit" class="btn btn-success" (click)="addEmployee()">
+                          Save data
+                        </button>
+                    </div>
+                </div>
 
             </form>
 
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Read Data</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Position</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let employee of employees; let i=index">
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.position}}</td>
+                        <td>
+                            <a class="btn btn-success" (click)="editEmployee(i)">Edit</a>
+                            <a class="btn btn-danger" (click)="deleteEmployee(i)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-sm-4" [hidden]="hideUpdate">
+            <form action="" class="form">
+                <h2>Update data</h2>
+                <div class="form-group row">
+                    <label for="name" class="col-2 col-form-label">Name:</label>
+                    <div class="col-10">
+                        <input type="text" name="name" [(ngModel)]="model2.name" id="name" class="form-control" placeholder="Enter a new name" aria-describedby="helpId">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-2 col-form-label">Email:</label>
+                    <div class="col-10">
+                        <input type="text" name="email" [(ngModel)]="model2.email" id="email" class="form-control" placeholder="Enter a new email" aria-describedby="helpId">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-2 col-form-label">Position:</label>
+                    <div class="col-10">
+                        <input type="text" name="position" [(ngModel)]="model2.position" id="position" class="form-control" placeholder="Enter a new position" aria-describedby="helpId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 offset-2">
+                        <button type="submit" class="btn btn-success" (click)="updateEmployee(i)">
+                          Save data
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
     </div>
 </div>
